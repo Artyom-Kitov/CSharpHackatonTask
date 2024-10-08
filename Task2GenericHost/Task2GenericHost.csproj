@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-Task2GenericHost-6e424f19-9b8d-4762-8f93-19b7542d50d5</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="33.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HackatonTaskLib\HackatonTaskLib.csproj" />
+    <ProjectReference Include="..\Nsu.HackathonProblem.Contracts\Nsu.HackathonProblem.Contracts.csproj" />
+  </ItemGroup>
+</Project>
