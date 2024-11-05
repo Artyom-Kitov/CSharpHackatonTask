@@ -1,0 +1,11 @@
+version: '3'
+services:
+  hackatondb:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=judge
+      - POSTGRES_PASSWORD=goga1234
+      - POSTGRES_DB=hackatondb
+    ports:
+      - "5432:5432"
+    restart: always

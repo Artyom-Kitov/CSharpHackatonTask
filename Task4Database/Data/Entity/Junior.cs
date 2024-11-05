@@ -1,0 +1,8 @@
+﻿namespace Task4Database.Data.Entity
+{
+    public class Junior
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = "";
+    }
+}

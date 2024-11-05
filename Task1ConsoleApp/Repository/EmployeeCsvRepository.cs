@@ -2,6 +2,8 @@ using CsvHelper;
 using System.Globalization;
 using CsvHelper.Configuration;
 using Nsu.HackathonProblem.Contracts;
+using System.Reflection;
+using System.Text;
 
 namespace Task1ConsoleApp.Repository
 {
@@ -22,8 +24,8 @@ namespace Task1ConsoleApp.Repository
             public string? Name { get; set; }
         }
 
-        private const string JuniorPathName = "../Juniors20.csv";
-        private const string TeamLeadPathName = "../Teamleads20.csv";
+        private const string JuniorPathName = nameof(Properties.Resources.Juniors20);
+        private const string TeamLeadPathName = nameof(Properties.Resources.Teamleads20);
 
         private readonly ISet<Employee> _juniors = new HashSet<Employee>();
         private readonly ISet<Employee> _teamLeads = new HashSet<Employee>();
@@ -70,15 +72,28 @@ namespace Task1ConsoleApp.Repository
             {
                 Delimiter = ";"
             };
-            using var reader = new StreamReader(path);
-            using var csvReader = new CsvReader(reader, config);
-            csvReader.Context.RegisterClassMap<EmployeeMap>();
-
-            IEnumerable<EmployeeDto> dtos = csvReader.GetRecords<EmployeeDto>();
-            foreach (EmployeeDto dto in dtos)
+            var employees = new List<Employee>();
+            try
             {
-                yield return new Employee(dto.Id, dto.Name ?? "");
+                string str = Properties.Resources.ResourceManager.GetObject(path)?.ToString()
+                    ?? throw new InvalidOperationException($"no such resource: {path}");
+                Stream stream = new MemoryStream(Encoding.ASCII.GetBytes(str));
+                using var reader = new StreamReader(stream);
+                using var csvReader = new CsvReader(reader, config);
+                csvReader.Context.RegisterClassMap<EmployeeMap>();
+
+                IEnumerable<EmployeeDto> dtos = csvReader.GetRecords<EmployeeDto>();
+                foreach (EmployeeDto dto in dtos)
+                {
+                    employees.Add(new(dto.Id, dto.Name ?? ""));
+                }
             }
+            catch (IOException e)
+            {
+                Console.WriteLine($"Error getting employees: {e.Message}");
+                throw;
+            }
+            return employees;
         }
     }
 }

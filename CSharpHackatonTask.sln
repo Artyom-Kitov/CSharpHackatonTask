@@ -3,23 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1ConsoleApp", "Task1ConsoleApp\Task1ConsoleApp.csproj", "{E292148A-55A0-4E63-95D1-6AA5D890DCB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1ConsoleApp", "Task1ConsoleApp\Task1ConsoleApp.csproj", "{E292148A-55A0-4E63-95D1-6AA5D890DCB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2GenericHost", "Task2GenericHost\Task2GenericHost.csproj", "{E84794B3-5FFD-4434-9F63-809B216265E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task2GenericHost", "Task2GenericHost\Task2GenericHost.csproj", "{E84794B3-5FFD-4434-9F63-809B216265E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackatonTaskLib", "HackatonTaskLib\HackatonTaskLib.csproj", "{99D7051F-7E57-45AD-BAB8-F43900377C6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackatonTaskLib", "HackatonTaskLib\HackatonTaskLib.csproj", "{99D7051F-7E57-45AD-BAB8-F43900377C6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nsu.HackathonProblem.Contracts", "Nsu.HackathonProblem.Contracts\Nsu.HackathonProblem.Contracts.csproj", "{74909006-2981-4BA6-BA7D-2E5F9F840AF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nsu.HackathonProblem.Contracts", "Nsu.HackathonProblem.Contracts\Nsu.HackathonProblem.Contracts.csproj", "{74909006-2981-4BA6-BA7D-2E5F9F840AF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task3HackatonTests", "Task3HackatonTests\Task3HackatonTests.csproj", "{57B1135C-E9B5-49EE-87A4-F5EAA221B170}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task3HackatonTests", "Task3HackatonTests\Task3HackatonTests.csproj", "{57B1135C-E9B5-49EE-87A4-F5EAA221B170}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4Database", "Task4Database\Task4Database.csproj", "{8E91A7DB-2A52-42B7-A385-E6E29FC34E59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E292148A-55A0-4E63-95D1-6AA5D890DCB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -42,5 +41,15 @@ Global
 		{57B1135C-E9B5-49EE-87A4-F5EAA221B170}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57B1135C-E9B5-49EE-87A4-F5EAA221B170}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57B1135C-E9B5-49EE-87A4-F5EAA221B170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E91A7DB-2A52-42B7-A385-E6E29FC34E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E91A7DB-2A52-42B7-A385-E6E29FC34E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E91A7DB-2A52-42B7-A385-E6E29FC34E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E91A7DB-2A52-42B7-A385-E6E29FC34E59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FA2E54A-E48B-4B51-9A6A-A3F9ABFB7E3A}
 	EndGlobalSection
 EndGlobal
