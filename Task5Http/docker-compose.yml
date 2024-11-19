@@ -1,0 +1,70 @@
+version: '3'
+services:
+  hr-manager:
+    container_name: hr-manager
+    image: task5http
+    build:
+      context: ../
+      dockerfile: Task5Http/Dockerfile
+    command: ["hr-manager"]
+
+  hr-director:
+    container_name: hr-director
+    image: task5http
+    volumes:
+      - ./sqlite-data:/app/data
+    command: ["hr-director"]
+  
+  junior-1:
+    container_name: junior-1
+    image: task5http
+    command: ["junior", "1"]
+
+  junior-2:
+    container_name: junior-2
+    image: task5http
+    command: ["junior", "2"]
+
+  junior-3:
+    container_name: junior-3
+    image: task5http
+    command: ["junior", "3"]
+
+  junior-4:
+    container_name: junior-4
+    image: task5http
+    command: ["junior", "4"]
+
+  junior-5:
+    container_name: junior-5
+    image: task5http
+    command: ["junior", "5"]
+
+  teamlead-1:
+    container_name: teamlead-1
+    image: task5http
+    command: ["teamlead", "1"]
+
+  teamlead-2:
+    container_name: teamlead-2
+    image: task5http
+    command: ["teamlead", "2"]
+
+  teamlead-3:
+    container_name: teamlead-3
+    image: task5http
+    command: ["teamlead", "3"]
+
+  teamlead-4:
+    container_name: teamlead-4
+    image: task5http
+    command: ["teamlead", "4"]
+
+  teamlead-5:
+    container_name: teamlead-5
+    image: task5http
+    command: ["teamlead", "5"]
+
+networks:
+  task5network:
+    driver: bridge

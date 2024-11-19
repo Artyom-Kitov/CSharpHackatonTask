@@ -1,6 +1,0 @@
-services:
-  task4database:
-    image: ${DOCKER_REGISTRY-}task4database
-    build:
-      context: Task4Database
-      dockerfile: Dockerfile

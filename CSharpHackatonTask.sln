@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nsu.HackathonProblem.Contra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task3HackatonTests", "Task3HackatonTests\Task3HackatonTests.csproj", "{57B1135C-E9B5-49EE-87A4-F5EAA221B170}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4Database", "Task4Database\Task4Database.csproj", "{8E91A7DB-2A52-42B7-A385-E6E29FC34E59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4Database", "Task4Database\Task4Database.csproj", "{8E91A7DB-2A52-42B7-A385-E6E29FC34E59}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task5Http", "Task5Http\Task5Http.csproj", "{42463F72-A7C4-4061-A0E0-4EA71EF595A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8E91A7DB-2A52-42B7-A385-E6E29FC34E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E91A7DB-2A52-42B7-A385-E6E29FC34E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E91A7DB-2A52-42B7-A385-E6E29FC34E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42463F72-A7C4-4061-A0E0-4EA71EF595A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42463F72-A7C4-4061-A0E0-4EA71EF595A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42463F72-A7C4-4061-A0E0-4EA71EF595A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42463F72-A7C4-4061-A0E0-4EA71EF595A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
