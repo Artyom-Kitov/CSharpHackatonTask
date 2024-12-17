@@ -28,7 +28,7 @@ namespace Task3HackatonTests
         {
             // given
             var calculator = AverageHarmonicCalculator.AverageHarmonic;
-            IEnumerable<int> values = new int[]{4, 6, 12, 18};
+            IEnumerable<int> values = [4, 6, 12, 18];
 
             // when
             double result = calculator(values);

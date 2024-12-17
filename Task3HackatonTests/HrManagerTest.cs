@@ -53,8 +53,8 @@ namespace Task3HackatonTests
         {
             // given
             var mockStrategy = new Mock<ITeamBuildingStrategy>();
-            IEnumerable<Wishlist> juniorsWishlists = new List<Wishlist>();
-            IEnumerable<Wishlist> teamLeadsWishlists = new List<Wishlist>();
+            IEnumerable<Wishlist> juniorsWishlists = [];
+            IEnumerable<Wishlist> teamLeadsWishlists = [];
             mockStrategy.Setup(x => x.BuildTeams(
                     It.IsAny<IEnumerable<Employee>>(), It.IsAny<IEnumerable<Employee>>(), teamLeadsWishlists, juniorsWishlists
                 )
@@ -62,7 +62,7 @@ namespace Task3HackatonTests
             var hrManager = new HrManager(mockStrategy.Object);
 
             // when
-            hrManager.BuildTeams(Enumerable.Empty<Employee>(), Enumerable.Empty<Employee>(), teamLeadsWishlists, juniorsWishlists);
+            hrManager.BuildTeams([], [], teamLeadsWishlists, juniorsWishlists);
 
             // then
             mockStrategy.Verify(x => x.BuildTeams(

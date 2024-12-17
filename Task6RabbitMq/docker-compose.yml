@@ -1,0 +1,122 @@
+version: '3'
+services:
+  rabbitmq:
+    image: rabbitmq:3.10.7-management
+    hostname: rabbitmq
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=biba
+      - RABBITMQ_DEFAULT_PASS=boba
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+
+  hr-manager:
+    container_name: hr-manager
+    image: task6rabbitmq
+    build:
+      context: ../
+      dockerfile: Task6RabbitMq/Dockerfile
+    command: ["hr-manager"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  hr-director:
+    container_name: hr-director
+    image: task6rabbitmq
+    volumes:
+      - ./sqlite-data:/app/data
+    command: ["hr-director"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+  
+  junior-1:
+    container_name: junior-1
+    image: task6rabbitmq
+    command: ["junior", "1"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  junior-2:
+    container_name: junior-2
+    image: task6rabbitmq
+    command: ["junior", "2"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  junior-3:
+    container_name: junior-3
+    image: task6rabbitmq
+    command: ["junior", "3"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  junior-4:
+    container_name: junior-4
+    image: task6rabbitmq
+    command: ["junior", "4"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  junior-5:
+    container_name: junior-5
+    image: task6rabbitmq
+    command: ["junior", "5"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  teamlead-1:
+    container_name: teamlead-1
+    image: task6rabbitmq
+    command: ["teamlead", "1"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  teamlead-2:
+    container_name: teamlead-2
+    image: task6rabbitmq
+    command: ["teamlead", "2"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  teamlead-3:
+    container_name: teamlead-3
+    image: task6rabbitmq
+    command: ["teamlead", "3"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  teamlead-4:
+    container_name: teamlead-4
+    image: task6rabbitmq
+    command: ["teamlead", "4"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  teamlead-5:
+    container_name: teamlead-5
+    image: task6rabbitmq
+    command: ["teamlead", "5"]
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+networks:
+  task6network:
+    driver: bridge

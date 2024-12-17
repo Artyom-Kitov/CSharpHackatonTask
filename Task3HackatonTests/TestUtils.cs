@@ -21,8 +21,8 @@ namespace Task3HackatonTests
         public static void BuildPerfectWishlists(IList<Employee> juniors, IList<Employee> teamLeads,
             out IList<Wishlist> juniorWishlists, out IList<Wishlist> teamLeadWishlists)
         {
-            juniorWishlists = new List<Wishlist>();
-            teamLeadWishlists = new List<Wishlist>();
+            juniorWishlists = [];
+            teamLeadWishlists = [];
             foreach (var junior in juniors)
             {
                 int[] wishes = Enumerable.Range(1, teamLeads.Count).ToArray();

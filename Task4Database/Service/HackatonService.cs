@@ -2,8 +2,8 @@
 using HackatonTaskLib.WishlistGeneration;
 using Microsoft.EntityFrameworkCore;
 using Nsu.HackathonProblem.Contracts;
-using Task4Database.Data.Entity;
 using Task4Database.Database;
+using DatabaseEntitiesLib.Entity;
 
 namespace Task4Database.Service
 {
@@ -20,7 +20,7 @@ namespace Task4Database.Service
         private readonly DatabaseConfig _config = config;
 
         public void GetHackatonInfo(int id, out IEnumerable<Employee> juniors, out IEnumerable<Employee> teamleads,
-            out IEnumerable<Data.Entity.Team> teams, out double harmony)
+            out IEnumerable<DatabaseEntitiesLib.Entity.Team> teams, out double harmony)
         {
             using var context = new ApplicationDbContext(_config);
             var hackaton = context.Hackatons
@@ -74,7 +74,7 @@ namespace Task4Database.Service
             }
         }
 
-        private void SaveTeams(ApplicationDbContext context, Hackaton hackaton, IEnumerable<Nsu.HackathonProblem.Contracts.Team> teams)
+        private static void SaveTeams(ApplicationDbContext context, Hackaton hackaton, IEnumerable<Nsu.HackathonProblem.Contracts.Team> teams)
         {
             foreach (var team in teams)
             {
@@ -84,12 +84,12 @@ namespace Task4Database.Service
                 var teamlead = context.Teamleads
                     .Where(t => t.Id == team.TeamLead.Id)
                     .First();
-                var teamEntity = new Data.Entity.Team() { Hackaton = hackaton, Junior = junior, Teamlead = teamlead };
+                var teamEntity = new DatabaseEntitiesLib.Entity.Team() { Hackaton = hackaton, Junior = junior, Teamlead = teamlead };
                 context.Teams.Add(teamEntity);
             }
         }
 
-        private void SaveWishlists(ApplicationDbContext context, Hackaton hackaton, 
+        private static void SaveWishlists(ApplicationDbContext context, Hackaton hackaton, 
             IEnumerable<Wishlist> juniorWishlists, IEnumerable<Wishlist> teamleadWishlists)
         {
             foreach (var wishlist in juniorWishlists)

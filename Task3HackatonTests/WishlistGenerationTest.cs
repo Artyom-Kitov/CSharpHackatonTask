@@ -6,20 +6,20 @@ namespace Task3HackatonTests
     [TestClass]
     public class WishlistGenerationTest
     {
-        private readonly IWishlistGenerator _generator = new RandomWishListGenerator();
+        private readonly RandomWishListGenerator _generator = new RandomWishListGenerator();
 
-        private readonly IReadOnlyList<Employee> _juniors = new List<Employee>
-        {
+        private readonly IReadOnlyList<Employee> _juniors =
+        [
             new(1, "Junior 1"),
             new(2, "Junior 2"),
             new(3, "Junior 3"),
-        };
-        private readonly IReadOnlyList<Employee> _teamLeads = new List<Employee>
-        {
+        ];
+        private readonly IReadOnlyList<Employee> _teamLeads =
+        [
             new(1, "Lead 1"),
             new(2, "Lead 2"),
             new(3, "Lead 3"),
-        };
+        ];
 
         [TestMethod]
         public void TestGenerate_ListSizeShouldBeSumOfLeadsAndJuniorsSizes()

@@ -1,9 +1,8 @@
-﻿using HackatonTaskLib.Harmony;
+﻿using DatabaseEntitiesLib.Entity;
+using HackatonTaskLib.Harmony;
 using Microsoft.EntityFrameworkCore;
 using Nsu.HackathonProblem.Contracts;
 using System.Data;
-using Task4Database.Data.Entity;
-using Task4Database.Database;
 using Task5Http.Database;
 using Task5Http.Requests;
 
@@ -69,7 +68,7 @@ namespace Task5Http.Services
                 var teamlead = _context.Teamleads
                     .Where(t => t.Id == team.TeamLead.Id)
                     .First();
-                var teamEntity = new Task4Database.Data.Entity.Team()
+                var teamEntity = new DatabaseEntitiesLib.Entity.Team()
                 {
                     Hackaton = hackaton,
                     Junior = junior,

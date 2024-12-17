@@ -1,18 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Task4Database.Data.Configuration;
-using Task4Database.Data.Entity;
+﻿using DatabaseEntitiesLib;
+using DatabaseEntitiesLib.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace Task5Http.Database
 {
-    public class SqliteDatabaseContext : DbContext
+    public class SqliteDatabaseContext : AbstractHackatonContext
     {
-        public DbSet<Junior> Juniors { get; set; } = null!;
-        public DbSet<Teamlead> Teamleads { get; set; } = null!;
-        public DbSet<Hackaton> Hackatons { get; set; } = null!;
-        public DbSet<Team> Teams { get; set; } = null!;
-        public DbSet<JuniorPreference> JuniorPreferences { get; set; } = null!;
-        public DbSet<TeamleadPreference> TeamleadPreferences { get; set; } = null!;
-
         public SqliteDatabaseContext(DbContextOptions options) : base(options)
         {
             Database.EnsureDeleted();

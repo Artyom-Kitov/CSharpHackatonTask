@@ -1,0 +1,6 @@
+@Task6RabbitMq_HostAddress = http://localhost:5208
+
+GET {{Task6RabbitMq_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

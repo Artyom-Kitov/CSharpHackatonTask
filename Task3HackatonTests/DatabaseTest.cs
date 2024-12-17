@@ -1,9 +1,9 @@
-﻿using FluentMigrator.Runner;
+﻿using DatabaseEntitiesLib.Entity;
+using FluentMigrator.Runner;
 using HackatonTaskLib.Harmony;
 using HackatonTaskLib.Strategy;
 using HackatonTaskLib.WishlistGeneration;
 using Microsoft.Extensions.DependencyInjection;
-using Task4Database.Data.Entity;
 using Task4Database.Database;
 using Task4Database.Migrations;
 using Task4Database.Service;

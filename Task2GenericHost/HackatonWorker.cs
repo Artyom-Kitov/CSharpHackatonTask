@@ -16,16 +16,19 @@ namespace Task2GenericHost
 
         protected override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
-            while (!cancellationToken.IsCancellationRequested)
+            await Task.Run(() =>
             {
-                double harmony = _hackaton.Hold();
-                lock (this)
+                while (!cancellationToken.IsCancellationRequested)
                 {
-                    _hackatonCounter++;
-                    _sumHarmonies += harmony;
-                    _logger.LogInformation("Hackaton #{i}, harmony level: {harmony}", _hackatonCounter, harmony);
+                    double harmony = _hackaton.Hold();
+                    lock (this)
+                    {
+                        _hackatonCounter++;
+                        _sumHarmonies += harmony;
+                        _logger.LogInformation("Hackaton #{i}, harmony level: {harmony}", _hackatonCounter, harmony);
+                    }
                 }
-            }
+            }, cancellationToken);
         }
 
         public override async Task StopAsync(CancellationToken cancellationToken)
